@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>{{relpath}}</h1>
+        {% for n in children %}
+        <p><a href="{{n}}">{{n}}</a></p>
+        {% endfor %}
+    </body>
+</html>
