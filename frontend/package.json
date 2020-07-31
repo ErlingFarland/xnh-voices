@@ -32,7 +32,6 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://erlingfarland.github.io/xnh-voices",
   "browserslist": {
     "production": [
       ">0.2%",
