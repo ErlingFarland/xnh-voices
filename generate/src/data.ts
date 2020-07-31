@@ -3,7 +3,7 @@ import fs from 'fs';
 import Ajv from 'ajv';
 import Yaml from 'yaml';
 import {SCHEMA_ROOT} from './consts'
-import {OriginalCharacterData} from '../../types/data'
+import {OriginalCharacterData, XConfigFile} from '../../types/data'
 
 
 async function loadSchema(name: string): Promise<any> {
@@ -28,9 +28,16 @@ async function loadYaml(fp: string): Promise<any>{
 }
 
 const characterDataSchema = loadSchema("OriginalCharacterData")
+const configSchema = loadSchema("XConfigFile")
 
 export async function loadCharacterData(fp: string): Promise<OriginalCharacterData>{
     const data = await loadYaml(fp)
     const schema = await characterDataSchema
     return verifySchema<OriginalCharacterData>(data, schema)
+}
+
+export async function loadConfigData(fp: string): Promise<XConfigFile>{
+    const data = await loadYaml(fp)
+    const schema = await configSchema
+    return verifySchema<XConfigFile>(data, schema)
 }

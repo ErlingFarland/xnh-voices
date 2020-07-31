@@ -10,6 +10,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "concurrently": "^5.2.0",
+    "http-server": "^0.12.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -17,8 +19,12 @@
     "typescript": "~3.7.2",
     "yaml": "^1.10.0"
   },
+  "proxy": "http://localhost:3005",
   "scripts": {
-    "start": "react-scripts start",
+    "generate-data": "cd ../generate && yarn build",
+    "start-project": "react-scripts start",
+    "start-static": "http-server ../generate/dist -p 3005",
+    "start": "yarn generate-data && concurrently 'yarn start-project' 'yarn start-static'",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

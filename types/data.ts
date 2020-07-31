@@ -1,22 +1,38 @@
-export interface OriginalCharacterData {
+type CategoryLiteral = "少年" | "青年" | "正太"
+type LanguageLiteral = "中文" | "日语" | "英语"
+
+interface CharacterMetaData {
     name: string
     source: string
     cv: string
-    category: "少年" | "青年" | "正太"
-    language: "中文" | "日语" | "英语"
+    category: CategoryLiteral
+    language: LanguageLiteral
     tags: string[]
+}
 
+export interface FileIndexInfo {
+    title: string
+    url: string
+}
+
+export type OriginalCharacterData = CharacterMetaData & {
     images: {[key: string]: string}
     files: {[key: string]: string}
 }
 
-export type XCharacterData = {type: "character"} & OriginalCharacterData
+export type XCharacterData = CharacterMetaData & {
+    type: "character"
+    images: FileIndexInfo[]
+    files: FileIndexInfo[]
+}
+
 export interface XDirData {
     type: "dir"
-    children: {
-        name: string
-        path: string
-    }[]
+    children: FileIndexInfo[]
 }
 
 export type XData = XCharacterData | XDirData
+
+export interface XConfigFile {
+    media_root: string
+}

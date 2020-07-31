@@ -10,20 +10,24 @@ build_dir="dist"
 
 cd "$GITHUB_WORKSPACE"
 
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install git-lfs python3-setuptools
+# curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+# sudo apt-get install git-lfs python3-setuptools
 
-pip3 install -r requirements.txt
-python3 generate
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install yarn
 
-# if [ -d /tmp/dist ]
-# then rm -rf /tmp/dist
-# fi
+cd generate
+yarn build
+cd ../frontend
+yarn build
+cd ..
+mv frontend/dist ./dist
+mv generate/dist/data ./dist/data
+
 
 cp .gitattributes dist/.gitattributes
 
-# mv dist /tmp/dist
-# cd /tmp/dist
 cd dist
 git init
 git checkout --orphan gh-pages
