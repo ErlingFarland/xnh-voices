@@ -24,7 +24,7 @@ cd ../frontend
 yarn install
 yarn build
 cd ..
-mv frontend/dist ./dist
+mv frontend/build ./dist
 mv generate/dist/data ./dist/data
 
 
