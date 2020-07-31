@@ -18,8 +18,10 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update && sudo apt install yarn
 
 cd generate
+yarn install
 yarn build
 cd ../frontend
+yarn install
 yarn build
 cd ..
 mv frontend/dist ./dist
