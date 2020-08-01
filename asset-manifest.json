@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "https://erlingfarland.github.io/xnh-voices/static/css/main.5f361e03.chunk.css",
+    "main.js": "https://erlingfarland.github.io/xnh-voices/static/js/main.8ea164f8.chunk.js",
+    "main.js.map": "https://erlingfarland.github.io/xnh-voices/static/js/main.8ea164f8.chunk.js.map",
+    "runtime-main.js": "https://erlingfarland.github.io/xnh-voices/static/js/runtime-main.5ec20671.js",
+    "runtime-main.js.map": "https://erlingfarland.github.io/xnh-voices/static/js/runtime-main.5ec20671.js.map",
+    "static/js/2.5f225df1.chunk.js": "https://erlingfarland.github.io/xnh-voices/static/js/2.5f225df1.chunk.js",
+    "static/js/2.5f225df1.chunk.js.map": "https://erlingfarland.github.io/xnh-voices/static/js/2.5f225df1.chunk.js.map",
+    "index.html": "https://erlingfarland.github.io/xnh-voices/index.html",
+    "precache-manifest.5ed93d3ffd113dd684b15a7fc636d952.js": "https://erlingfarland.github.io/xnh-voices/precache-manifest.5ed93d3ffd113dd684b15a7fc636d952.js",
+    "service-worker.js": "https://erlingfarland.github.io/xnh-voices/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "https://erlingfarland.github.io/xnh-voices/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.5f225df1.chunk.js.LICENSE.txt": "https://erlingfarland.github.io/xnh-voices/static/js/2.5f225df1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5ec20671.js",
+    "static/js/2.5f225df1.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.8ea164f8.chunk.js"
+  ]
+}
