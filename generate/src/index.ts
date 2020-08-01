@@ -34,7 +34,7 @@ async function onDir(config: XConfigFile, fp: string, children: string[]): Promi
         type: "dir",
         children: zip(children, childrenData).map(([c, d]) => ({
             title: c,
-            url: URL.resolve(relPath, c)
+            url: encodeURI(URL.resolve(relPath, c))
         }))
     }
     const outData = JSON.stringify(out)
@@ -56,7 +56,7 @@ function getMediaUrls(config: XConfigFile, relPath: string, data: OriginalCharac
     }
     return Object.entries(data).map(([k, v]) => ({
         title: k,
-        url: URL.resolve(URL.resolve(config.media_root, relPath), v)
+        url: `${config.media_root}/${encodeURI(relPath)}/${encodeURI(v)}`
     }))
 }
 
