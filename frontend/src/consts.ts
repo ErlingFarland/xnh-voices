@@ -1,0 +1,1 @@
+export const DATA_ROOT_URL = 'data'
