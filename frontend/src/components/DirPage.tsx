@@ -2,12 +2,8 @@ import {XDirData} from '../../../types/data'
 import React, { CSSProperties } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import List from '@material-ui/core/List';
-import ListItem, { ListItemProps } from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText'
 import { DirUpButton } from './DirUpButton';
-import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';

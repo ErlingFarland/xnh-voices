@@ -21,7 +21,7 @@ export const FilePage = withRouter((params: RouteComponentProps<Params>) => {
     const parent = path ? path.split("/").slice(0, -1).join("/") : null
     if(data == null){
         return <Skeleton variant="rect" width={210} height={118} />
-    }else if (data.type == 'character'){
+    }else if (data.type === 'character'){
         return <CharacterPage data={data} parent={parent}/>
     }else {
         return <DirPage data={data} parent={parent} relPath={path}/>
