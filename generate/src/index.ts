@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import URL from 'url'
 import {filter, zip} from 'lodash'
 import {loadCharacterData, loadConfigData} from './data'
 import rimraf from 'rimraf'
@@ -33,7 +34,7 @@ async function onDir(config: XConfigFile, fp: string, children: string[]): Promi
         type: "dir",
         children: zip(children, childrenData).map(([c, d]) => ({
             title: c,
-            url: path.join(relPath, c)
+            url: URL.resolve(relPath, c)
         }))
     }
     const outData = JSON.stringify(out)
@@ -55,7 +56,7 @@ function getMediaUrls(config: XConfigFile, relPath: string, data: OriginalCharac
     }
     return Object.entries(data).map(([k, v]) => ({
         title: k,
-        url: path.join(config.media_root, relPath, v)
+        url: URL.resolve(URL.resolve(config.media_root, relPath), v)
     }))
 }
 
