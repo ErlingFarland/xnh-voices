@@ -16,6 +16,7 @@ const galleryImageStyle: CSSProperties = {
 }
 
 function renderGallery(images: FileIndexInfo[]){
+    console.log(images)
     return <GridList cellHeight={window.innerHeight / 2}>
         {images.map(({title, url}) => (
             <GridListTile key={url}>

@@ -16,7 +16,6 @@ export const FilePage = withRouter((params: RouteComponentProps<Params>) => {
     const [data, setData] = useState<XData|null>(null)
     useEffect(() => {
         loadNodeData(path, setData)
-        console.log(path)
     }, [path])
     const parent = path ? path.split("/").slice(0, -1).join("/") : null
     if(data == null){
